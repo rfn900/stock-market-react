@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Breadcrumbs from '../components/Breadcrumbs'
 
 export default function InstrumentListPage(props) {
     const [instrumentList, setInstrumentList] = useState(null)
@@ -14,7 +15,7 @@ export default function InstrumentListPage(props) {
 
     return (
         <div>
-            <h1>{props.match.path}</h1>
+            <Breadcrumbs/>
             {!instrumentList && <p>Loading...</p>}
 
             {instrumentList && Object.entries(instrumentList).map((item, index)=>{            
