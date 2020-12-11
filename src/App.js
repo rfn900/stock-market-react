@@ -2,6 +2,7 @@ import React from 'react'
 import {Route, Switch, Link} from 'react-router-dom'
 import Header from './components/Header'
 import MainPage from './pages/MainPage'
+import InstrumentListPage from './pages/InstrumentListPage'
 
 function App() {
   return (
@@ -10,21 +11,14 @@ function App() {
       <Header />
       
       <Switch>
-        <Route path="/indexes">
-          <h1>Indexes page</h1>
-          
-        </Route>
-        <Route path="/markets">
-          <h1>Markets page</h1>
-          
-        </Route>
-        <Route path="/currencies">
-          <h1>Currencies page</h1>
-          
-        </Route>
-        <Route path="/crypto">
-          <h1>Crypto page</h1>
-        </Route>
+        <Route path="/indexes" component={InstrumentListPage}/>
+
+        <Route path="/markets" component={InstrumentListPage}/>
+       
+        <Route path="/currencies" component={InstrumentListPage}/>
+
+        <Route path="/crypto" component={InstrumentListPage}/>
+
         <Route path="/"> 
           <MainPage />
         </Route>
