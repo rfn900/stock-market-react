@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 export default function Breadcrumbs() {
     const pathArray = window.location.href.split("/") //Read from current url and save elements into an array
     //
