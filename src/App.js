@@ -11,6 +11,16 @@ function App() {
       <Header />
       
       <Switch>
+
+        <Route path="/indexes/:id" component={InstrumentListPage}/>
+
+        <Route path="/markets/:id" component={InstrumentListPage}/>
+       
+        <Route path="/currencies/:id" component={InstrumentListPage}/>
+
+        <Route path="/crypto/:id" component={InstrumentListPage}/>
+
+
         <Route path="/indexes" component={InstrumentListPage}/>
 
         <Route path="/markets" component={InstrumentListPage}/>
@@ -22,6 +32,7 @@ function App() {
         <Route path="/"> 
           <MainPage />
         </Route>
+
       </Switch>
     </div>
   );
