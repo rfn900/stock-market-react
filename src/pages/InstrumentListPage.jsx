@@ -3,20 +3,21 @@ import React, { useState, useEffect } from 'react'
 export default function InstrumentListPage(props) {
     const [instrumentList, setInstrumentList] = useState(null)
 
+    console.log(instrumentList)
     useEffect(()=>{
         const path = props.match.path
         const url = `https://market-data-collector.firebaseio.com/market-collector${path}.json`
         fetch(url)
         .then(res => res.json())
         .then(data => setInstrumentList(data))
+    },[props.match.path])
 
-    },[instrumentList])
     return (
         <div>
-            {!instrumentList && <p>Loading...</p> }
+            <h1>{props.match.path}</h1>
+            {!instrumentList && <p>Loading...</p>}
 
-            {instrumentList && Object.entries(instrumentList).map((item, index)=>{
-                console.log(item[1])
+            {instrumentList && Object.entries(instrumentList).map((item, index)=>{            
                 return <p key={index}>{item[0]}</p>
             })}
 
