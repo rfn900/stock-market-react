@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 export default function InstrumentListPage(props) {
-    const [instrumentList, setInstrumentList] = useState(null)
+    const [instrumentList, setInstrumentList] = useState([])
 
     console.log(instrumentList)
     useEffect(()=>{

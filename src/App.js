@@ -35,10 +35,6 @@ function App() {
       </div>
 
       <Switch>
-        <Route path="/">
-          <Indexes />
-        </Route>
-
         <Route path="/markets">
           <Markets />
         </Route>
@@ -49,6 +45,10 @@ function App() {
 
         <Route path="/crypto">
           <Crypto />
+        </Route>
+
+        <Route path="/">
+          <Indexes />
         </Route>
       </Switch>
     </div>
