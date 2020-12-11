@@ -18,10 +18,18 @@ function App() {
       <div className="row">
         <div className="col-md-12">
           <ul className="nav">
-            <NavLinkItem to="/" text="Indexes" />
-            <NavLinkItem to="/markets" text="Markets" />
-            <NavLinkItem to="/currencies" text="Currencies" />
-            <NavLinkItem to="/crypto" text="Crypto" />
+            <div className="card col-6">
+              <NavLinkItem to="/" text="Indexes" />
+            </div>
+            <div className="card col-6">
+              <NavLinkItem to="/markets" text="Markets" />
+            </div>
+            <div className="card col-6">
+              <NavLinkItem to="/currencies" text="Currencies" />
+            </div>
+            <div className="card col-6">
+              <NavLinkItem to="/crypto" text="Crypto" />
+            </div>
           </ul>
         </div>
       </div>
