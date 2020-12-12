@@ -17,7 +17,9 @@ export default function InstrumentListItem({path, name}) {
                 </Link>
             )}
             {isLinkToDetails() && (
-                <p>{name} (Link to detail page)</p>
+                <Link to={`${path}/${name}`}>
+                    <p>{name}</p>
+                </Link>
             )}
         </div>
     )
