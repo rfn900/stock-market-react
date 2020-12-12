@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function InstrumentDetailPage(props) {
     const [instrument, setInstrument] = useState(null)
@@ -16,6 +17,7 @@ export default function InstrumentDetailPage(props) {
 
     return (
         <>
+            <Breadcrumbs />
             {!instrument && <p>Loading...</p>}
 
             {instrument && (
