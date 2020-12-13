@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 export default function CryptoUsdPage3Detail() {
     const [cryptoObject, setCryptoObject] = useState({})
