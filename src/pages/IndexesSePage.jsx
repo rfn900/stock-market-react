@@ -2,15 +2,15 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 
 
-export default function InstrumentListPage() {
-    const [marketObject, setMarketObject] = useState({})
+export default function IndexSesePage() {
+    const [indexObject, setIndexObject] = useState({})
 
 
 
     function fetchInstrumentList(){
         fetch("https://market-data-collector.firebaseio.com/market-collector/.json")
         .then( response => response.json() )
-        .then( data => setMarketObject(data["markets"]) )
+        .then( data => setIndexObject(data["indexes"]) )
 
     }
 
@@ -19,18 +19,18 @@ export default function InstrumentListPage() {
     }, [])
     
 
-    console.log(marketObject)
+    console.log(indexObject)
     
-    let marketList = Object.keys(marketObject)
+    let indexesList = Object.keys(indexObject)
 
     return (
         
-    <div >
-        <h1>Market List Page</h1>
+    <div>
+        <h1>Indexes Se Page</h1>
       <div className="container">
         <div className="row row-cols-3">
-            {marketList.map( marketListItem => {
-                return <div className="card col"><p>< Link to={"/markets/" + marketListItem}>{marketListItem}</Link></p></div>
+            {indexesList.map( indexesListItem => {
+                return <div className="card col"><p>< Link to={"/indexes/" + indexesListItem}>{indexesListItem}</Link></p></div>
                 })}
         </div>
      </div>

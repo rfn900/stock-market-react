@@ -8,6 +8,9 @@ import Crypto from "./pages/Crypto";
 import InstrumentListPage from "./pages/InstrumentListPage";
 import InstrumentListPage2 from "./pages/InstrumentListPage2";
 import InstrumentListPage3Detail from "./pages/InstrumentListPage3Detail";
+import IndexSePage from "./pages/IndexesSePage";
+import IndexesSePage2List from "./pages/IndexesSePage2List";
+import IndexesSePage3Detail from "./pages/IndexesSePage3Detail";
 
 function App() {
   return (
@@ -22,7 +25,7 @@ function App() {
         <div className="col-md-12">
           <ul className="nav">
             <div className="card col-6">
-              <NavLinkItem to="/" text="Indexes" />
+              <NavLinkItem to="/indexes" text="Indexes" />
             </div>
             <div className="card col-6">
               <NavLinkItem to="/markets" text="Markets" />
@@ -60,6 +63,18 @@ function App() {
 
         <Route path="/crypto">
           <Crypto />
+        </Route>
+
+        <Route path="/indexes/:nameOfIndexes/:nameOfIndexes2">
+          <IndexesSePage3Detail />
+        </Route>
+
+        <Route path="/indexes/:nameOfIndexes">
+          <IndexesSePage2List />
+        </Route>
+
+        <Route path="/indexes">
+          <IndexSePage />
         </Route>
 
         <Route path="/">

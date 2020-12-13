@@ -26,10 +26,12 @@ export default function InstrumentListPage() {
     return (
     <>
     <h1>Market List Page 2</h1>
-    <div>
+    <div className="container">
+    <div className="row row-cols-3"> 
         {marketList.map( marketListItem => {
-            return <p>< Link to={"/markets/" + nameOfMarket + "/" + marketListItem}>{marketListItem}</Link></p>
+            return <div className="card col"><p>< Link to={"/markets/" + nameOfMarket + "/" + marketListItem}>{marketListItem}</Link></p></div>
         })}
+    </div>
     </div>
     </>
     )
