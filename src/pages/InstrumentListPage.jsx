@@ -24,13 +24,16 @@ export default function InstrumentListPage() {
     let marketList = Object.keys(marketObject)
 
     return (
-    <>
-    <h1>Market List Page</h1>
-    <div>
-        {marketList.map( marketListItem => {
-            return <p>< Link to={"/markets/" + marketListItem}>{marketListItem}</Link></p>
-        })}
-    </div>
-    </>
+        
+    <div >
+        <h1>Market List Page</h1>
+      <div className="container">
+        <div className="row row-cols-3">
+            {marketList.map( marketListItem => {
+                return <div className="col"><p>< Link to={"/markets/" + marketListItem}>{marketListItem}</Link></p></div>
+                })}
+        </div>
+     </div>
+   </div>
     )
 }
