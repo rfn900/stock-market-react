@@ -16,82 +16,86 @@ import CryptoUsdPage3Detail from "./pages/CryptoUsdPage3Detail";
 
 function App() {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12">
-          <h1>Stock Market</h1>
+    <>
+      <header className="mb-auto">
+        <div>
+          <h3 className="float-md-start mb-0">
+            <Link to={"/"}>Stock Market</Link>
+          </h3>
+          <nav className="nav nav-masthead justify-content-center float-md-end">
+            <NavLinkItem to="/indexes" text="Indexes" />
+            <NavLinkItem to="/markets" text="Markets" />
+            <NavLinkItem to="/currencies" text="Currencies" />
+            <NavLinkItem to="/crypto" text="Crypto" />
+          </nav>
         </div>
-      </div>
+      </header>
 
-      <div className="row">
-        <div className="col-md-12">
-          <ul className="nav">
-            <div className="card col-6">
-              <NavLinkItem to="/indexes" text="Indexes" />
-            </div>
-            <div className="card col-6">
-              <NavLinkItem to="/markets" text="Markets" />
-            </div>
-            <div className="card col-6">
-              <NavLinkItem to="/currencies" text="Currencies" />
-            </div>
-            <div className="card col-6">
-              <NavLinkItem to="/crypto" text="Crypto" />
-            </div>
-          </ul>
-        </div>
-      </div>
+      <main className="px-3">
+        <Switch>
+          <Route path="/crypto/:nameOfCrypto/:nameOfCrypto2">
+            <CryptoUsdPage3Detail />
+          </Route>
 
-      <Switch>
-        <Route path="/crypto/:nameOfCrypto/:nameOfCrypto2">
-          <CryptoUsdPage3Detail />
-        </Route>
+          <Route path="/crypto/:nameOfCrypto">
+            <CryptoUsdPage2List />
+          </Route>
 
-        <Route path="/crypto/:nameOfCrypto">
-          <CryptoUsdPage2List />
-        </Route>
+          <Route path="/crypto">
+            <CryptoUsdPage />
+          </Route>
 
-        <Route path="/crypto">
-          <CryptoUsdPage />
-        </Route>
+          <Route path="/markets/:nameOfMarket/:nameOfMarket2">
+            <InstrumentListPage3Detail />
+          </Route>
 
-        <Route path="/markets/:nameOfMarket/:nameOfMarket2">
-          <InstrumentListPage3Detail />
-        </Route>
+          <Route path="/markets/:nameOfMarket">
+            <InstrumentListPage2 />
+          </Route>
 
-        <Route path="/markets/:nameOfMarket">
-          <InstrumentListPage2 />
-        </Route>
+          <Route path="/markets">
+            <InstrumentListPage />
+          </Route>
 
-        <Route path="/markets">
-          <InstrumentListPage />
-        </Route>
+          <Route path="/currencies/:nameOfCurrencies/:nameOfCurrencies2">
+            <CurrenciesSekPage3Detail />
+          </Route>
 
-        <Route path="/currencies/:nameOfCurrencies/:nameOfCurrencies2">
-          <CurrenciesSekPage3Detail />
-        </Route>
+          <Route path="/currencies/:nameOfCurrencies">
+            <CurrenciesSekPage2List />
+          </Route>
 
-        <Route path="/currencies/:nameOfCurrencies">
-          <CurrenciesSekPage2List />
-        </Route>
+          <Route path="/currencies">
+            <CurrenciesSekPage />
+          </Route>
 
-        <Route path="/currencies">
-          <CurrenciesSekPage />
-        </Route>
+          <Route path="/indexes/:nameOfIndexes/:nameOfIndexes2">
+            <IndexesSePage3Detail />
+          </Route>
 
-        <Route path="/indexes/:nameOfIndexes/:nameOfIndexes2">
-          <IndexesSePage3Detail />
-        </Route>
+          <Route path="/indexes/:nameOfIndexes">
+            <IndexesSePage2List />
+          </Route>
 
-        <Route path="/indexes/:nameOfIndexes">
-          <IndexesSePage2List />
-        </Route>
-
-        <Route path="/indexes">
-          <IndexSePage />
-        </Route>
-      </Switch>
-    </div>
+          <Route path="/indexes">
+            <IndexSePage />
+          </Route>
+        </Switch>
+      </main>
+      <footer class="mt-auto text-white-50">
+        <p>
+          Cover template for{" "}
+          <a href="https://getbootstrap.com/" class="text-white">
+            Bootstrap
+          </a>
+          , by{" "}
+          <a href="https://twitter.com/mdo" class="text-white">
+            @mdo
+          </a>
+          .
+        </p>
+      </footer>
+    </>
   );
 }
 
