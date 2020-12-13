@@ -6,6 +6,7 @@ import Markets from "./pages/Markets";
 import Currencies from "./pages/Currencies";
 import Crypto from "./pages/Crypto";
 import InstrumentListPage from "./pages/InstrumentListPage";
+import InstrumentListPage2 from "./pages/InstrumentListPage2";
 
 function App() {
   return (
@@ -36,7 +37,11 @@ function App() {
       </div>
 
       <Switch>
-        <Route path="/instrumentListPage">
+        <Route path="/markets/:nameOfMarket">
+          <InstrumentListPage2 />
+        </Route>
+
+        <Route path="/markets">
           <InstrumentListPage />
         </Route>
 
