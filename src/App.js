@@ -5,6 +5,7 @@ import Indexes from "./pages/Indexes";
 import Markets from "./pages/Markets";
 import Currencies from "./pages/Currencies";
 import Crypto from "./pages/Crypto";
+import InstrumentListPage from "./pages/InstrumentListPage";
 
 function App() {
   return (
@@ -35,6 +36,10 @@ function App() {
       </div>
 
       <Switch>
+        <Route path="/instrumentListPage">
+          <InstrumentListPage />
+        </Route>
+
         <Route path="/markets">
           <Markets />
         </Route>
