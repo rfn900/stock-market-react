@@ -1,16 +1,18 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import NavLinkItem from "./components/NavLinkItem";
-import Indexes from "./pages/Indexes";
-import Markets from "./pages/Markets";
-import Currencies from "./pages/Currencies";
-import Crypto from "./pages/Crypto";
 import InstrumentListPage from "./pages/InstrumentListPage";
 import InstrumentListPage2 from "./pages/InstrumentListPage2";
 import InstrumentListPage3Detail from "./pages/InstrumentListPage3Detail";
 import IndexSePage from "./pages/IndexesSePage";
 import IndexesSePage2List from "./pages/IndexesSePage2List";
 import IndexesSePage3Detail from "./pages/IndexesSePage3Detail";
+import CurrenciesSekPage from "./pages/CurrenciesSekPage";
+import CurrenciesSekPage2List from "./pages/CurrenciesSekPage2List";
+import CurrenciesSekPage3Detail from "./pages/CurrenciesSekPage3Detail";
+import CryptoUsdPage from "./pages/CryptoUsdPage";
+import CryptoUsdPage2List from "./pages/CryptoUsdPage2List";
+import CryptoUsdPage3Detail from "./pages/CryptoUsdPage3Detail";
 
 function App() {
   return (
@@ -41,6 +43,18 @@ function App() {
       </div>
 
       <Switch>
+        <Route path="/crypto/:nameOfCrypto/:nameOfCrypto2">
+          <CryptoUsdPage3Detail />
+        </Route>
+
+        <Route path="/crypto/:nameOfCrypto">
+          <CryptoUsdPage2List />
+        </Route>
+
+        <Route path="/crypto">
+          <CryptoUsdPage />
+        </Route>
+
         <Route path="/markets/:nameOfMarket/:nameOfMarket2">
           <InstrumentListPage3Detail />
         </Route>
@@ -53,16 +67,16 @@ function App() {
           <InstrumentListPage />
         </Route>
 
-        <Route path="/markets">
-          <Markets />
+        <Route path="/currencies/:nameOfCurrencies/:nameOfCurrencies2">
+          <CurrenciesSekPage3Detail />
+        </Route>
+
+        <Route path="/currencies/:nameOfCurrencies">
+          <CurrenciesSekPage2List />
         </Route>
 
         <Route path="/currencies">
-          <Currencies />
-        </Route>
-
-        <Route path="/crypto">
-          <Crypto />
+          <CurrenciesSekPage />
         </Route>
 
         <Route path="/indexes/:nameOfIndexes/:nameOfIndexes2">
@@ -75,10 +89,6 @@ function App() {
 
         <Route path="/indexes">
           <IndexSePage />
-        </Route>
-
-        <Route path="/">
-          <Indexes />
         </Route>
       </Switch>
     </div>
