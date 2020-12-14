@@ -1,8 +1,10 @@
 import React from 'react'
 import {Route, Switch, Link} from 'react-router-dom'
+
 import Header from './components/Header'
 import MainPage from './pages/MainPage'
 import InstrumentListPage from './pages/InstrumentListPage'
+import './styles/app.scss'
 
 function App() {
   return (

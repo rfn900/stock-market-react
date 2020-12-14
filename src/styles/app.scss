@@ -1,0 +1,15 @@
+// Here we can override all Bootstrap properties
+
+// $theme-colors: () !default;
+// $theme-colors: map-merge(
+//   (
+//     "primary": #our-primary-color,
+//     "secondary": #our-secondary-color,
+//     "success": #our-sucess-color
+//     (and so on...)
+//   ),
+//   $theme-colors
+// );
+
+
+@import '~bootstrap/scss/bootstrap';
