@@ -8,20 +8,21 @@ export default function InstrumentListPage(props) {
     useEffect(()=>{
         setInstrumentList(null)
         const path = props.match.url; // changed to convert ex "/markets/:id" to "/markets/stockholm"
-        console.log(path);
+        console.log("path: " + path);
         const url = `https://market-data-collector.firebaseio.com/market-collector${path}.json`
+        console.log('url: ' + url);
         fetch(url)
         .then(res => res.json())
         .then(data => setInstrumentList(data))
-    },[props.match.url])
+    },[props.match.url]);
 
     return (
         <div>
             <Breadcrumbs/>
             {!instrumentList && <p>Loading...</p>}
 
-            {instrumentList && Object.entries(instrumentList).map((item, index)=>{     
-                return <InstrumentListItem key={index} path={props.match.url} name={item[0]}/>
+            {instrumentList && Object.entries(instrumentList).map((item, index)=>{   
+                return <InstrumentListItem key={index} path={props.match.url} name={item[0]} />
             })}
 
         </div>
