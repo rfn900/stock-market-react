@@ -1,8 +1,27 @@
 // We can use this file to override Bootstrap classes
 
-// $primary: #our-primary-color;
-// $secondary: #our-secondary-color;
-// $danger: #our-danger-color;
-// and so on...
+$primary:   #AC9FBB;
+$nav:   #F7EBEC;
+
+// $secondary: #BDEDE0;
+$danger:    #7E78D2;
+// $primary:   #B6B8D6;
+// $secondary: #B6B8D6;
+$success:   #AC9FBB;
+// $info:      #B6B8D6;
+// $warning:   #B6B8D6;
+// $danger:    #B6B8D6;
+$light:     #AC9FBB;
+// $dark:      #B6B8D6;
+
+$body-bg:   #ffffff;        
+$body-color:#76717a;       
+
+
+$navbar-light-color:                $nav !default;
+$navbar-light-hover-color:          rgba($nav, .7) !default;
+$navbar-light-active-color:         rgba($nav, .9) !default;
+$navbar-light-disabled-color:       rgba($nav, .3) !default;
+$navbar-light-toggler-border-color: rgba($nav, .1) !default;
 
 @import '~bootstrap/scss/bootstrap';
