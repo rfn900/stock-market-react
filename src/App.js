@@ -4,6 +4,7 @@ import Header from './components/Header'
 import MainPage from './pages/MainPage'
 import InstrumentListPage from './pages/InstrumentListPage'
 
+import './styles/app.scss'
 function App() {
   return (
     <div className="container">
