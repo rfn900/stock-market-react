@@ -36,7 +36,7 @@ export default function InstrumentListPage(props) {
             {redirect && <Redirect to={redirect} />}
 
             {instrumentList && Object.entries(instrumentList).map((item, index)=>{     
-                return <InstrumentListItem key={index} path={props.match.url} name={item[0]}/>
+                return <InstrumentListItem key={index} path={props.match.url} name={item[0]} text={item[1].name}/>
             })}
 
         </div>
