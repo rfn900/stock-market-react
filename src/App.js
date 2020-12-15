@@ -9,21 +9,23 @@ import InstrumentDetailPage from './pages/InstrumentDetailPage'
 import './styles/app.scss'
 function App() {
   return (
-    <div className="container">
+    <div>
       
       <Header />
-      
-      <Switch>
-  
-        <Route path="/:category/:section/:id" component={InstrumentDetailPage}/>
-        <Route path="/:category/:section" component={InstrumentListPage}/>
-        <Route path="/:category" component={InstrumentListPage}/>
+      <div className="container">
+        <Switch>
+    
+          <Route path="/:category/:section/:id" component={InstrumentDetailPage}/>
+          <Route path="/:category/:section" component={InstrumentListPage}/>
+          <Route path="/:category" component={InstrumentListPage}/>
 
-        <Route path="/"> 
-          <MainPage />
-        </Route>
+          <Route path="/"> 
+            <MainPage />
+          </Route>
 
-      </Switch>
+        </Switch>
+
+      </div>
     </div>
   );
 }
