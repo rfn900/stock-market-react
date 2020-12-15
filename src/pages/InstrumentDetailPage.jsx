@@ -9,7 +9,6 @@ export default function InstrumentDetailPage(props) {
     useEffect( () => {
         const path = props.match.url;
         const url = `https://market-data-collector.firebaseio.com/market-collector${path}.json`
-        // const url = "https://market-data-collector.firebaseio.com/market-collector/crypto/usd/0X-CRYPTO.json"
         fetch(url)
         .then(res => res.json())
         .then(data => setInstrument(data))
