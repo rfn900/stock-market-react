@@ -38,19 +38,12 @@ export default function InstrumentDetailPage(props) {
                         <tbody>
                             {Object.entries(instrument).map((entry, index) => {
                                 if (!hiddenInfo.includes(entry[0])) {
-                                    if (entry[0] === "values") {
+                                    return (
                                         <tr key={index}>
-                                            <th>Values:</th>
-                                            <td>Click for more info</td>
+                                            <th>{details[entry[0]]}:</th>
+                                            <td>{entry[1]}</td>
                                         </tr>
-                                    } else {
-                                        return (
-                                            <tr key={index}>
-                                                <th>{details[entry[0]]}:</th>
-                                                <td>{entry[1]}</td>
-                                            </tr>
-                                        )
-                                    }
+                                    )
                                 }
                             })}
                         </tbody>
