@@ -15,21 +15,8 @@ function App() {
       <Switch>
   
         <Route path={`/:category/:section/:id`} component={InstrumentDetailPage}/>
-        {/* <Route path={`/markets/:section/:id`} component={InstrumentDetailPage}/>
-        <Route path={`/currencies/:section/:id`} component={InstrumentDetailPage}/>
-        <Route path={`/crypto/:section/:id`} component={InstrumentDetailPage}/> */}
-
-
-        <Route path="/:category/:id" component={InstrumentListPage}/>
-        {/* <Route path="/markets/:id" component={InstrumentListPage}/>
-        <Route path="/currencies/:id" component={InstrumentListPage}/>
-        <Route path="/crypto/:id" component={InstrumentListPage}/> */}
-
-
+        <Route path="/:category/:section" component={InstrumentListPage}/>
         <Route path="/:category" component={InstrumentListPage}/>
-        {/* <Route path="/markets" component={InstrumentListPage}/>
-        <Route path="/currencies" component={InstrumentListPage}/>
-        <Route path="/crypto" component={InstrumentListPage}/> */}
 
         <Route path="/"> 
           <MainPage />
