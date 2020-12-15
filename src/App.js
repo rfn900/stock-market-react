@@ -13,6 +13,7 @@ import CurrenciesSekPage3Detail from "./pages/CurrenciesSekPage3Detail";
 import CryptoUsdPage from "./pages/CryptoUsdPage";
 import CryptoUsdPage2List from "./pages/CryptoUsdPage2List";
 import CryptoUsdPage3Detail from "./pages/CryptoUsdPage3Detail";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       <header className="mb-auto">
         <div>
           <h3 className="float-md-start mb-0">
-            <Link to={"/"}>Stock Market</Link>
+            <Link to={"/home"}>Stock Market</Link>
           </h3>
           <nav className="nav nav-masthead justify-content-center float-md-end">
             <NavLinkItem to="/indexes" text="Indexes" />
@@ -33,6 +34,10 @@ function App() {
 
       <main className="px-3">
         <Switch>
+          <Route path="/home">
+            <Home />
+          </Route>
+
           <Route path="/crypto/:nameOfCrypto/:nameOfCrypto2">
             <CryptoUsdPage3Detail />
           </Route>
@@ -86,7 +91,7 @@ function App() {
         <p>
           Cover template for{" "}
           <a href="https://getbootstrap.com/" class="text-white">
-            Bootstrap
+            Stock Market
           </a>
           , by{" "}
           <a href="https://twitter.com/mdo" class="text-white">
