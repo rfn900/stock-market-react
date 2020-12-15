@@ -15,7 +15,7 @@ function App() {
       
       <Switch>
   
-        <Route path={`/:category/:section/:id`} component={InstrumentDetailPage}/>
+        <Route path="/:category/:section/:id" component={InstrumentDetailPage}/>
         <Route path="/:category/:section" component={InstrumentListPage}/>
         <Route path="/:category" component={InstrumentListPage}/>
 
