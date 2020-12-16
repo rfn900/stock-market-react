@@ -25,3 +25,11 @@ $navbar-light-disabled-color:       rgba($nav, .3) !default;
 $navbar-light-toggler-border-color: rgba($nav, .1) !default;
 
 @import '~bootstrap/scss/bootstrap';
+
+html {
+    position: relative;
+    min-height: 100%;
+    body {
+        margin-bottom: 10vh;
+    }
+}

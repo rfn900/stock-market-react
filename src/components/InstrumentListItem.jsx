@@ -25,7 +25,7 @@ export default function InstrumentListItem({path, name, text, isHome}) {
     const url = isHome ? path : `${path}/${name}`;
 
     return (
-        <div className="col-lg-4 col-sm-6 col-xs-12 p-2">
+        <div className="col-lg-6 col-sm-6 col-xs-12 p-2">
             <Link to={url}>
                 <Card className="card p-2 text-center">
                     {path === "/markets" ? <Title>{name}</Title> : <Title>{text}</Title>}
