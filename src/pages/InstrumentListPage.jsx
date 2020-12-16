@@ -33,11 +33,15 @@ export default function InstrumentListPage(props) {
     
     return (
         <div>
+<<<<<<< HEAD
             
             {instrumentList && <Breadcrumbs path={props.match} instrumentList={instrumentList}/>}
             {!instrumentList && <p>Loading...</p>}
             {/* {redirect && console.log(redirect)} */}
             {redirect && <Redirect to={redirect} />}
+=======
+            <Breadcrumbs/>
+>>>>>>> a0cb5864260eb61e326ee6c9f7ce7a5277814089
 
             <div className="row">
                 {!instrumentList && <p>Loading...</p>}

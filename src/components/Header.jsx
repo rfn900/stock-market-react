@@ -1,9 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
+const Nav = styled.nav`
+    box-shadow: 2px 6px 10px rgba(172, 160, 187, 0.2);
+    margin-bottom: 2em;
+    
+`
 
 export default function Header() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <Nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="navbar-brand" to="/">
                 <h1>Stock Market</h1>
             </Link>
@@ -26,6 +33,6 @@ export default function Header() {
                     </li>
                 </ul>
             </div>
-        </nav>
+        </Nav>
     )
 }
