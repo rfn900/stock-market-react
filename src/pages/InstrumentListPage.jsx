@@ -10,12 +10,16 @@ export default function InstrumentListPage(props) {
     useEffect(()=>{
         setRedirect(null)
         setInstrumentList(null)
+        setRedirect(null)
         const path = props.match.url; // changed to convert ex "/markets/:id" to "/markets/stockholm"
         const url = `https://market-data-collector.firebaseio.com/market-collector${path}.json`
         fetch(url)
         .then(res => res.json())
         .then(data => {
+<<<<<<< HEAD
             // console.log(data, 'aqui');
+=======
+>>>>>>> e2d4aab78171c40a0baed52ebf67d897f409cca6
             checkLength(data)
             setInstrumentList(data)
         })
@@ -33,16 +37,24 @@ export default function InstrumentListPage(props) {
     
     return (
         <div>
+<<<<<<< HEAD
             
             {instrumentList && <Breadcrumbs path={props.match} instrumentList={instrumentList}/>}
             {!instrumentList && <p>Loading...</p>}
             {/* {redirect && console.log(redirect)} */}
             {redirect && <Redirect to={redirect} />}
+=======
+            <Breadcrumbs/>
+>>>>>>> e2d4aab78171c40a0baed52ebf67d897f409cca6
 
-            {instrumentList && Object.entries(instrumentList).map((item, index)=>{     
-                return <InstrumentListItem key={index} path={props.match.url} name={item[0]} text={item[1].name}/>
-            })}
+            <div className="row">
+                {!instrumentList && <p>Loading...</p>}
+                {redirect && <Redirect to={redirect} />}
 
+                {instrumentList && Object.entries(instrumentList).map((item, index)=>{     
+                    return <InstrumentListItem key={index} path={props.match.url} name={item[0]} text={item[1].name}/>
+                })}
+            </div>
         </div>
     )
 }
