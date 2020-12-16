@@ -22,12 +22,8 @@ const Card = styled.div`
 
 export default function InstrumentListItem({path, name, text, isHome}) {
 
-<<<<<<< HEAD
-export default function InstrumentListItem({path, name, text}) {
-=======
     const url = isHome ? path : `${path}/${name}`;
 
->>>>>>> e2d4aab78171c40a0baed52ebf67d897f409cca6
     return (
         <div className="col-lg-4 col-sm-6 col-xs-12 p-2">
             <Link to={url}>
