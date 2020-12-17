@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import MainPage from './pages/MainPage'
 import InstrumentListPage from './pages/InstrumentListPage'
 import InstrumentDetailPage from './pages/InstrumentDetailPage'
+import FavoritesPage from './pages/FavoritesPage'
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <Header />
       <div className="container">
         <Switch>
-    
+          
+          <Route path="/favorites" component={FavoritesPage}/>
           <Route path="/:category/:section/:id" component={InstrumentDetailPage}/>
           <Route path="/:category/:section" component={InstrumentListPage}/>
           <Route path="/:category" component={InstrumentListPage}/>

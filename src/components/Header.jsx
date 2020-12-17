@@ -26,6 +26,10 @@ export default function Header() {
                     <li className="nav-item disabled">
                         <Link className="nav-link" to="/crypto">Crypto</Link>
                     </li>
+                    <li className="ml-5"><p></p></li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/favorites">Favorites</Link>
+                    </li>
                 </ul>
             </div>
         </HeaderStyled>
