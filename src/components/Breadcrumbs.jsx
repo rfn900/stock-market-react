@@ -14,7 +14,8 @@ export default function Breadcrumbs(props) {
         fetch(url)
         .then(res => res.json())
         .then(data => {
-           setName(data.name);
+           const renderedName = data.name === '' ? data.ticker : data.name; 
+           setName(renderedName);
         })
     },[])
 
