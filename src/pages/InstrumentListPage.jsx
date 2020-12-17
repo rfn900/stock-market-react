@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs'
-import InstrumentListItem from '../components/InstrumentListItem'
+import Card from '../components/Card'
 
 export default function InstrumentListPage(props) {
     const [instrumentList, setInstrumentList] = useState(null)
     const [redirect, setRedirect] = useState(null);
 
     useEffect(()=>{
-        setRedirect(null)
         setInstrumentList(null)
         setRedirect(null)
-        const path = props.match.url; // changed to convert ex "/markets/:id" to "/markets/stockholm"
+        const path = props.match.url; 
         const url = `https://market-data-collector.firebaseio.com/market-collector${path}.json`
         fetch(url)
         .then(res => res.json())
@@ -26,29 +25,20 @@ export default function InstrumentListPage(props) {
         const numOfEntries = Object.entries(data).length;
         if (numOfEntries === 1) {
             setRedirect(`${props.match.url}/${Object.keys(data)[0]}`)
-            console.log(`${props.match.url}/${Object.keys(data)[0]}`, redirect)
-
         }
     }
     
     return (
         <div>
-<<<<<<< HEAD
             
             {instrumentList && <Breadcrumbs path={props.match} instrumentList={instrumentList}/>}
-            {!instrumentList && <p>Loading...</p>}
-            {/* {redirect && console.log(redirect)} */}
+            
             {redirect && <Redirect to={redirect} />}
-=======
-            <Breadcrumbs/>
->>>>>>> a0cb5864260eb61e326ee6c9f7ce7a5277814089
-
+            
             <div className="row">
                 {!instrumentList && <p>Loading...</p>}
-                {redirect && <Redirect to={redirect} />}
-
                 {instrumentList && Object.entries(instrumentList).map((item, index)=>{     
-                    return <InstrumentListItem key={index} path={props.match.url} name={item[0]} text={item[1].name}/>
+                    return <Card key={index} path={props.match.url} ticker={item[0]} name={item[1].name}/>
                 })}
             </div>
         </div>
