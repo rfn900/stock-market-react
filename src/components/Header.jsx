@@ -1,16 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
 
-const Nav = styled.nav`
-    box-shadow: 2px 6px 10px rgba(172, 160, 187, 0.2);
-    margin-bottom: 2em;
-    
-`
+import {HeaderStyled} from './HeaderStyled'
 
 export default function Header() {
     return (
-        <Nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <HeaderStyled className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="navbar-brand" to="/">
                 <h1>Stock Market</h1>
             </Link>
@@ -18,7 +13,7 @@ export default function Header() {
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
+                <ul className="navbar-nav ml-auto">
                     <li className="nav-item active">
                         <Link className="nav-link" to="/indexes">Indexes</Link>
                     </li>
@@ -33,6 +28,6 @@ export default function Header() {
                     </li>
                 </ul>
             </div>
-        </Nav>
+        </HeaderStyled>
     )
 }
