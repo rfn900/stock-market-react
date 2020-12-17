@@ -12,7 +12,7 @@ export default function Card({path, ticker, name, isHome}) {
 
     const dynamicClassName = testpath === '/'? 
       "col-lg-6 col-sm-6 col-xs-12 p-2":
-      "col-lg-6 col-sm-4 col-xs-12 p-2"
+      "col-lg-4 col-sm-4 col-xs-12 p-2"
     return (
         <div className={dynamicClassName}>
             <Link to={url}>
