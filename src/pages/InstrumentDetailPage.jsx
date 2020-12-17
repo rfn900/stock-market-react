@@ -44,20 +44,20 @@ export default function InstrumentDetailPage(props) {
 
   const LineChartData = [
     {
-      Y: instrument["y5"],
-      X: "y5",
+      Price: instrument["y5"],
+      Time: "y5",
     },
     {
-      Y: instrument["y3"],
-      X: "y3",
+      Price: instrument["y3"],
+      Time: "y3",
     },
     {
-      Y: instrument["w1"],
-      X: "w1",
+      Price: instrument["w1"],
+      Time: "w1",
     },
     {
-      Y: instrument["today"],
-      X: "today",
+      Price: instrument["today"],
+      Time: "today",
     },
   ];
 
@@ -106,10 +106,10 @@ export default function InstrumentDetailPage(props) {
                 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="X" />
+                <XAxis dataKey="Time" />
                 <YAxis />
                 <Tooltip />
-                <Line type="monotone" dataKey="Y" stroke="#AC9FBB" />
+                <Line type="monotone" dataKey="Price" stroke="#AC9FBB" />
               </LineChart>
             </ResponsiveContainer>
           </div>
