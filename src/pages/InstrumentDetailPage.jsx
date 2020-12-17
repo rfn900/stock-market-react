@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom';
 import Breadcrumbs from '../components/Breadcrumbs';
 import styled from 'styled-components'
 
-const Row = styled.tr`
+const RowStyled = styled.tr`
     &:hover {
         background-color: rgba(172, 160, 187, 0.075) !important;
     }
@@ -46,10 +45,10 @@ export default function InstrumentDetailPage(props) {
                             {Object.entries(instrument).map((entry, index) => {
                                 if (!hiddenInfo.includes(entry[0])) {
                                     return (
-                                        <Row key={index}>
+                                        <RowStyled key={index}>
                                             <th>{details[entry[0]]}:</th>
                                             <td>{entry[1]}</td>
-                                        </Row>
+                                        </RowStyled>
                                     )
                                 }
                             })}
