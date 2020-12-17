@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs'
-import InstrumentListItem from '../components/InstrumentListItem'
+import Card from '../components/Card'
 
 export default function InstrumentListPage(props) {
     const [instrumentList, setInstrumentList] = useState(null)
@@ -10,7 +10,7 @@ export default function InstrumentListPage(props) {
     useEffect(()=>{
         setInstrumentList(null)
         setRedirect(null)
-        const path = props.match.url; // changed to convert ex "/markets/:id" to "/markets/stockholm"
+        const path = props.match.url; 
         const url = `https://market-data-collector.firebaseio.com/market-collector${path}.json`
         fetch(url)
         .then(res => res.json())
@@ -30,14 +30,15 @@ export default function InstrumentListPage(props) {
     
     return (
         <div>
-            <Breadcrumbs/>
-
+            
+            {instrumentList && <Breadcrumbs path={props.match} instrumentList={instrumentList}/>}
+            
+            {redirect && <Redirect to={redirect} />}
+            
             <div className="row">
                 {!instrumentList && <p>Loading...</p>}
-                {redirect && <Redirect to={redirect} />}
-
                 {instrumentList && Object.entries(instrumentList).map((item, index)=>{     
-                    return <InstrumentListItem key={index} path={props.match.url} name={item[0]} text={item[1].name}/>
+                    return <Card key={index} path={props.match.url} ticker={item[0]} name={item[1].name}/>
                 })}
             </div>
         </div>

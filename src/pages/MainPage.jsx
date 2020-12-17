@@ -1,6 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import InstrumentListItem from '../components/InstrumentListItem'
+
+import Card from '../components/Card'
 
 
 export default function MainPage() {
@@ -8,10 +8,10 @@ export default function MainPage() {
         <>
             <div className="row">
                 
-                <InstrumentListItem path="/crypto" name="" text="Crypto"/>
-                <InstrumentListItem path="/currencies" name="" text="Currencies"/>
-                <InstrumentListItem path="/indexes" name="" text="Indexes"/>
-                <InstrumentListItem path="/markets" name="Markets" text="Markets" isHome={true}/>
+                <Card path="/crypto" ticker="" name="Crypto"/>
+                <Card path="/currencies" ticker="" name="Currencies"/>
+                <Card path="/indexes" ticker="" name="Indexes"/>
+                <Card path="/markets" ticker="Markets" name="Markets" isHome/>
                 
             </div>
         </>

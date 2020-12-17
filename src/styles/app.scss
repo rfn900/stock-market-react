@@ -3,17 +3,8 @@
 $primary:   rgb(172, 160, 187);
 $nav:   rgb(247, 235, 236);
 
-// $secondary: #BDEDE0;
-$danger:    rgb(255, 0, 0);
-// $primary:   #B6B8D6;
-// $secondary: #B6B8D6;
 $success:   #AC9FBB;
-// $info:      #B6B8D6;
-// $warning:   #B6B8D6;
-// $danger:    #B6B8D6;
 $light:     #AC9FBB;
-// $dark:      #B6B8D6;
-
 $body-bg:   #ffffff;        
 $body-color:#76717a;       
 
@@ -25,3 +16,11 @@ $navbar-light-disabled-color:       rgba($nav, .3) !default;
 $navbar-light-toggler-border-color: rgba($nav, .1) !default;
 
 @import '~bootstrap/scss/bootstrap';
+
+html {
+    position: relative;
+    min-height: 100%;
+    body {
+         margin-bottom: 5em;
+    }
+}
