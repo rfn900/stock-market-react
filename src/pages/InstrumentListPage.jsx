@@ -21,7 +21,7 @@ export default function InstrumentListPage(props) {
             checkLength(data)
             setInstrumentList(data)
         })
-    },[props.match.url])
+    },[props.match.url]) 
     
     function checkLength(data) {
         //sets redirect path to ex: "sek" or "usd" if only one entry in instrumentList
