@@ -11,7 +11,7 @@ export default function MainPage() {
                 <Card path="/crypto" ticker="" name="Crypto"/>
                 <Card path="/currencies" ticker="" name="Currencies"/>
                 <Card path="/indexes" ticker="" name="Indexes"/>
-                <Card path="/markets" ticker="Markets" name="Markets" isHome/>
+                <Card path="/markets" ticker="Markets" name="Markets" isMarketsHome/>
                 
             </div>
         </>
