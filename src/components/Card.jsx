@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom'
 
 import {CardStyled} from './CardStyled'
 
-export default function Card({path, ticker, name, isMarketsHome}) {
+export default function Card({path, ticker, name, isHome}) {
     const renderedName = name === '' ? ticker : name; //If the name property is empty, render the ticker instead 
-    const url = isMarketsHome ? path : `${path}/${ticker}`;//For the Markets card the url must contain the ticker prop
+    const url = isHome ? path : `${path}/${ticker}`;//For the Markets card the url must contain the ticker prop
     
     const location = useLocation();
     const testPath = location.pathname;//This allow us to check if we are on the MainPage
