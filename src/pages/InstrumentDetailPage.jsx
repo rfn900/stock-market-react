@@ -21,8 +21,6 @@ const RowStyled = styled.tr`
 export default function InstrumentDetailPage(props) {
   const [instrument, setInstrument] = useState({});
 
-  console.log(instrument);
-
   const hiddenInfo = [
     "source",
     "link",
