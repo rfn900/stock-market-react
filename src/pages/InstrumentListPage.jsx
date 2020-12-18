@@ -39,7 +39,7 @@ export default function InstrumentListPage(props) {
     return (
         <div ref={scrollRef}>
             
-            {instrumentList && <Breadcrumbs path={props.match} instrumentList={instrumentList}/>}
+            {instrumentList && <Breadcrumbs/>}
             
             {redirect && <Redirect to={redirect} />}
             

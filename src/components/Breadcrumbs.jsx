@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-export default function Breadcrumbs(props) {
+export default function Breadcrumbs() {
     const location = useLocation()
     const [name, setName] = useState(null)
     const pathArray = location.pathname.split("/") //Read from current url and save elements into an array
