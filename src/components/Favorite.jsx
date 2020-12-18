@@ -6,27 +6,30 @@ const FavoriteStyled = styled.span`
 `
 
 export default function Favorite({instrument, path}) {
-    const [favorite, setFavorite] = useState(false)
+    const [favorite, setFavorite] = useState(checkLocalStorage)
 
     //set stored favorite on mount
-    useEffect(() => {
+    function checkLocalStorage() {
         // if any favorites in storage
         if(localStorage.getItem("favorites")) {
             const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
             // if this path is stored
             if (storedFavorites.hasOwnProperty(path)) { // kolla detta
-                setFavorite(true)
+                return true
+            } else {
+                return false
             }
+        } else {
+            return false
         }
-    }, [])
+    }
 
     // upon favorite change -> set updated local storage object
     useEffect(() => {
         // if any favorites have been stored
         if(localStorage.getItem("favorites") !== null) {
             const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
-            localStorage.removeItem("favorites")
-
+            
             // if favorited and not stored
             if (favorite && !storedFavorites.hasOwnProperty(path)) {
                 storedFavorites[path] = instrument
