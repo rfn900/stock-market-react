@@ -10,12 +10,12 @@ export default function InstrumentListPage(props) {
     const [redirect, setRedirect] = useState(null);
     const scrollRef = useRef(null);
 
-    useEffect(()=>{
+    useEffect(()=>{ 
         setInstrumentList(null)
         setRedirect(null)
         const path = props.match.url; 
         const url = `https://market-data-collector.firebaseio.com/market-collector${path}.json`
-        fetch(url)
+        fetch(url)   // Fetch from API.  
         .then(res => res.json())
         .then(data => {
             checkLength(data)
@@ -24,7 +24,7 @@ export default function InstrumentListPage(props) {
     },[props.match.url])
     
     function checkLength(data) {
-        //sets redirect path to ex: "sek" if only one entry in instrumentList
+        //sets redirect path to ex: "sek" or "usd" if only one entry in instrumentList
         const numOfEntries = Object.entries(data).length;
         if (numOfEntries === 1) {
             setRedirect(`${props.match.url}/${Object.keys(data)[0]}`)
@@ -44,10 +44,11 @@ export default function InstrumentListPage(props) {
             {redirect && <Redirect to={redirect} />}
             
             <div className="row">
-                {!instrumentList && <p>Loading...</p>}
-                {instrumentList && Object.entries(instrumentList).map((item, index)=>{     
+                {!instrumentList && <p>Loading...</p>} {/*Render a loading text if no contents availble*/}
+                {instrumentList && Object.entries(instrumentList).map((item, index)=>{
                     return <Card key={index} path={props.match.url} ticker={item[0]} name={item[1].name}/>
                 })}
+                {/* Otherwise, render a "card" */}
             </div>
             <ScrollUp onClick={handleOnClick}/>
         </div>
