@@ -69,7 +69,9 @@ export default function InstrumentDetailPage(props) {
             </tbody>
           </table>
           {/* show diagram for instruments with proper data */}
-          {instrument["ytd"] && <Diagram instrument={instrument}/>}
+          {instrument["ytd"] !== undefined && (
+            <Diagram instrument={instrument} />
+          )}
         </div>
       )}
     </>
