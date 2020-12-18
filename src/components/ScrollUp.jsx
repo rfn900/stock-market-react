@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+//Create an arrow up to be used as a Scroll up button
+
 const ScrollUpDiv = styled.div`
     width: 3.5em;
     height: 3.5em;
@@ -37,6 +39,7 @@ const ScrollUpDiv = styled.div`
 
 export default function ScrollUp(props) {
     return (
+        // We need to pass the onClick function as props so we can use here
         <ScrollUpDiv onClick={props.onClick}>
             <span></span>
         </ScrollUpDiv>

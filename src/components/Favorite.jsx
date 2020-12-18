@@ -2,13 +2,14 @@ import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 
 const FavoriteStyled = styled.span`
-    color: ${props => props.favorite && "gold"}
+    color: ${props => props.favorite && "gold"};
+    cursor: pointer;
 `
 
 export default function Favorite({instrument, path}) {
     const [favorite, setFavorite] = useState(checkLocalStorage)
 
-    //set stored favorite on mount
+    //check stored favorites
     function checkLocalStorage() {
         // if any favorites in storage
         if(localStorage.getItem("favorites")) {
