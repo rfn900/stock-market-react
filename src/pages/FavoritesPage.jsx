@@ -7,7 +7,6 @@ export default function FavoritesPage(props) {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
     return (
         <>
-            {/* <Breadcrumbs /> */}
             <h3>Favorites</h3>
             <div className="row">
                 {Object.entries(storedFavorites).map((item, index) => {
