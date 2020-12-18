@@ -31,8 +31,8 @@ export default function InstrumentListPage(props) {
         }
     }
     
+    // scroll to top of page
     function handleOnClick(){
-        console.log(scrollRef)
         scrollRef.current.scrollIntoView(); 
     }
 
@@ -50,6 +50,8 @@ export default function InstrumentListPage(props) {
                 })}
                 {/* Otherwise, render a "card" */}
             </div>
+            
+            {/* top of page - icon */}
             <ScrollUp onClick={handleOnClick}/>
         </div>
     )
