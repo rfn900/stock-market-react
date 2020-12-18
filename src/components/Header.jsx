@@ -5,6 +5,8 @@ import {HeaderStyled} from './HeaderStyled'
 
 export default function Header() {
 
+    // Variable "links" is a list of section names on our site. Each of the elements of this list is transformed into a <li> element with a link to corresponding section.
+
     const links = [
         "Indexes",
         "Markets",
