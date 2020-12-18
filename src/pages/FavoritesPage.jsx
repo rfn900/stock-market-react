@@ -4,7 +4,8 @@ import Card from '../components/Card';
 export default function FavoritesPage(props) {
     let storedFavorites = null;
     if (localStorage.getItem("favorites")) {
-        storedFavorites = JSON.parse(localStorage.getItem("favorites"));
+        const stored = JSON.parse(localStorage.getItem("favorites"))
+        Object.keys(stored).length > 0 && (storedFavorites = stored)
     }
     return (
         <>
