@@ -2,15 +2,7 @@ import React, { useState, useEffect } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import styled from "styled-components";
 import Favorite from '../components/Favorite';
-import {
-  LineChart,
-  Line,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import Diagram from "../components/Diagram";
 
 const RowStyled = styled.tr`
   &:hover {
@@ -41,24 +33,6 @@ export default function InstrumentDetailPage(props) {
     ytd: "Year to date",
   };
 
-  const LineChartData = [
-    {
-      Price: instrument["y5"],
-      Time: "y5",
-    },
-    {
-      Price: instrument["y3"],
-      Time: "y3",
-    },
-    {
-      Price: instrument["w1"],
-      Time: "w1",
-    },
-    {
-      Price: instrument["today"],
-      Time: "today",
-    },
-  ];
 
   useEffect(() => {
     const path = props.match.url;
@@ -91,28 +65,7 @@ export default function InstrumentDetailPage(props) {
               })}
             </tbody>
           </table>
-          <div style={{ width: "100%", height: 300 }}>
-            <ResponsiveContainer>
-              <LineChart
-                className="container-fluid"
-                width={600}
-                height={300}
-                data={LineChartData}
-                margin={{
-                  top: 5,
-                  right: 60,
-                  left: 0,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="Time" />
-                <YAxis />
-                <Tooltip />
-                <Line type="monotone" dataKey="Price" stroke="#AC9FBB" />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
+          {instrument["ytd"] && <Diagram instrument={instrument}/>}
         </div>
       )}
     </>
