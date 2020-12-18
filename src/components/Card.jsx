@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom'
 
 import {CardStyled} from './CardStyled'
 
-export default function Card({path, ticker, name, isMarketsHome}) {
+export default function Card({path, ticker, name, isHome}) {
     const renderedName = name === '' ? ticker : name;  
-    const url = isMarketsHome ? path : `${path}/${ticker}`;
+    const url = isHome ? path : `${path}/${ticker}`;
     
     const location = useLocation();
     const testPath = location.pathname;
