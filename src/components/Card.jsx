@@ -5,15 +5,15 @@ import { CardStyled } from "./CardStyled";
 
 // Got 4 cards propaties from MainPage.jsx.
 export default function Card({ path, ticker, name, isHome }) {
-  //If the name property is empty, render(show) line 23 <p>{renderedName}</p> the ticker instead because we use it for name={item[1].name} ofInstrumentListPage.jsx.
+  //If the name property is empty, render(show) line 45 <p>{renderedName}</p> the ticker instead because we use it for name={item[1].name} ofInstrumentListPage.jsx.
   const renderedName = name === "" ? ticker : name;
-  //To link URL if isHome is true then URL is path otherwise path + / + ticker (is a data of inside Markets, Crypto...  of stock)
+  //To link URL if isHome is true then URL is path otherwise path + / + ticker (is a data of inside Markets, Crypto...)
   //(For the Markets card the url must contain the ticker prop)
   const url = isHome ? path : `${path}/${ticker}`;
 
-  // Get all the URL path (http://localhost:3000/crypto/usd) and
+  // Get all the URL path (ex.http://localhost:3000/crypto/usd).
   const location = useLocation();
-  // Take the last part after (/crypto/usd).
+  // Take the last part after (ex./crypto/usd).
   // (This allow us to check if we are on the MainPage)
   const testPath = location.pathname;
 
@@ -26,16 +26,16 @@ export default function Card({ path, ticker, name, isHome }) {
   //   }
   const dynamicClassName = testPath === "/" ? "col-sm-6" : "col-md-4";
 
-  // Render different bootstrap style when we are on MainPage
+  // (Render different bootstrap style when we are on MainPage)
   return (
     // `p-2 ${dynamicClassName}` is the same as "p-2 " + dynamicClassName so give padding 2. Each card size depend on if MainPage.
     <div className={`p-2 ${dynamicClassName}`}>
       {/* Link to next url from line 12 */}
       <Link to={url}>
         <CardStyled className="card p-2 text-center">
-          {/* What to show inside card 
-            Check if path is "/markets", show folloings.
-            This is the same code below. ? mean is if, : mean else.
+          {/* What to show inside card. 
+            Check if path is "/markets", show after of that.
+            This is the same code below.
             if (path === "/markets") {
                 <p>{ticker}</p>
             } else {
