@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import styled from "styled-components";
+import Favorite from '../components/Favorite';
 import {
   LineChart,
   Line,
@@ -76,7 +77,8 @@ export default function InstrumentDetailPage(props) {
 
       {instrument && (
         <div>
-          <h3>{instrument.name}</h3>
+          <h3>{instrument.name}   <Favorite instrument={instrument} path={props.match.url}/></h3>
+
           <table className="table table-hover">
             <tbody>
               {Object.entries(instrument).map((entry, index) => {
@@ -116,5 +118,5 @@ export default function InstrumentDetailPage(props) {
         </div>
       )}
     </>
-  );
+  )
 }
