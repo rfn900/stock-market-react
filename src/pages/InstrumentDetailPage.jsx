@@ -13,6 +13,7 @@ const RowStyled = styled.tr`
 export default function InstrumentDetailPage(props) {
   const [instrument, setInstrument] = useState({});
 
+  // keys we don't want to display
   const hiddenInfo = [
     "source",
     "link",
@@ -22,6 +23,7 @@ export default function InstrumentDetailPage(props) {
     "values",
   ];
 
+  // keys and their text for display
   const details = {
     market: "Market",
     mtd: "Month to date",
@@ -33,7 +35,7 @@ export default function InstrumentDetailPage(props) {
     ytd: "Year to date",
   };
 
-
+  // fetch instrument object from api
   useEffect(() => {
     const path = props.match.url;
     const url = `https://market-data-collector.firebaseio.com/market-collector${path}.json`;
@@ -48,12 +50,13 @@ export default function InstrumentDetailPage(props) {
       {!instrument && <p>Loading...</p>}
 
       {instrument && (
-        <div>
+        <div>                      {/* Save to favorites icon */}
           <h3>{instrument.name}   <Favorite instrument={instrument} path={props.match.url}/></h3>
 
           <table className="table table-hover">
             <tbody>
               {Object.entries(instrument).map((entry, index) => {
+                {/* Display details not in hiddenInfo array */}
                 if (!hiddenInfo.includes(entry[0])) {
                   return (
                     <RowStyled key={index}>
@@ -65,6 +68,7 @@ export default function InstrumentDetailPage(props) {
               })}
             </tbody>
           </table>
+          {/* show diagram for instruments with proper data */}
           {instrument["ytd"] && <Diagram instrument={instrument}/>}
         </div>
       )}
