@@ -1,9 +1,8 @@
 import React from 'react'
-import Breadcrumbs from '../components/Breadcrumbs';
 import Card from '../components/Card';
 
 export default function FavoritesPage(props) {
-    const storedFavorites = null;
+    let storedFavorites = null;
     if (localStorage.getItem("favorites")) {
         storedFavorites = JSON.parse(localStorage.getItem("favorites"));
     }
