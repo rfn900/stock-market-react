@@ -25,6 +25,7 @@ export default function Favorite({instrument, path}) {
         // if any favorites have been stored
         if(localStorage.getItem("favorites") !== null) {
             const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
+            localStorage.removeItem("favorites")
 
             // if favorited and not stored
             if (favorite && !storedFavorites.hasOwnProperty(path)) {
