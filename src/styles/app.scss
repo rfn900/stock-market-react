@@ -20,6 +20,7 @@ $navbar-light-toggler-border-color: rgba($nav, .1) !default;
 html {
     position: relative;
     min-height: 100%;
+    scroll-behavior: smooth;
     body {
          margin-bottom: 5em;
     }
