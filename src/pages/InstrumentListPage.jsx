@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Redirect } from 'react-router-dom'
+
+import ScrollUp from '../components/ScrollUp'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Card from '../components/Card'
 
 export default function InstrumentListPage(props) {
     const [instrumentList, setInstrumentList] = useState(null)
     const [redirect, setRedirect] = useState(null);
+    const scrollRef = useRef(null);
 
     useEffect(()=>{
         setInstrumentList(null)
@@ -28,8 +31,13 @@ export default function InstrumentListPage(props) {
         }
     }
     
+    function handleOnClick(){
+        console.log(scrollRef)
+        scrollRef.current.scrollIntoView(); 
+    }
+
     return (
-        <div>
+        <div ref={scrollRef}>
             
             {instrumentList && <Breadcrumbs path={props.match} instrumentList={instrumentList}/>}
             
@@ -41,6 +49,7 @@ export default function InstrumentListPage(props) {
                     return <Card key={index} path={props.match.url} ticker={item[0]} name={item[1].name}/>
                 })}
             </div>
+            <ScrollUp onClick={handleOnClick}/>
         </div>
     )
 }
