@@ -8,13 +8,11 @@ export default function Card({path, ticker, name, isHome}) {
     const url = isHome ? path : `${path}/${ticker}`;
     
     const location = useLocation();
-    const testpath = location.pathname;
+    const testPath = location.pathname;
 
-    const dynamicClassName = testpath === '/'? 
-      "col-lg-6 col-sm-6 col-xs-12 p-2":
-      "col-lg-6 col-sm-4 col-xs-12 p-2"
+    const dynamicClassName = testPath === '/'? "col-sm-6": "col-md-4"
     return (
-        <div className={dynamicClassName}>
+        <div className={`p-2 ${dynamicClassName}`}>
             <Link to={url}>
                 <CardStyled className="card p-2 text-center">
                     {path === "/markets" ? <p>{ticker}</p> : <p>{renderedName}</p>}
