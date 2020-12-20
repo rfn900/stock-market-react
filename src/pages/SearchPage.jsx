@@ -3,7 +3,7 @@ import Card from '../components/Card'
 
 export default function SearchPage(props) {
     const matches = props.location.matches
-    const length = Object.entries(matches).length
+    const length = matches ? Object.entries(matches).length : 0
     const showResults = length > 0 && length < 150
     return (
         <div className="row">
