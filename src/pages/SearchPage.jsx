@@ -4,7 +4,7 @@ import Card from '../components/Card'
 export default function SearchPage(props) {
     const matches = props.location.matches
     const length = Object.entries(matches).length
-    const showResults = length > 1 && length < 150
+    const showResults = length > 0 && length < 150
     return (
         <div className="row">
             {length > 150 && <p>There are too many matches. Please try to narrow down your search.</p>}
