@@ -2,12 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import {HeaderStyled} from './HeaderStyled'
+import Search from './Search'
 
 export default function Header() {
 
     // Variable "links" is a list of section names on our site. Each of the elements of this list is transformed into a <li> element with a link to corresponding section.
 
     const links = [
+        "",
         "Indexes",
         "Markets",
         "Currencies",
@@ -27,6 +29,8 @@ export default function Header() {
             <div className="collapse navbar-collapse" id="navbarNav">
 
                 <ul className="navbar-nav ml-auto">
+                    <Search />
+                    
                     {links.map( (item, index) => {
                         return (
                         <li className="nav-item ">
