@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
+import StarIcon from '@material-ui/icons/Star';
+import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
 
 const FavoriteStyled = styled.span`
     color: ${props => props.favorite && "gold"};
     cursor: pointer;
+    transition: all 150ms ease-in-out;
 `
 
 export default function Favorite({instrument, path}) {
@@ -56,7 +59,7 @@ export default function Favorite({instrument, path}) {
 
     return (
         <FavoriteStyled onClick={handleOnClick} favorite={favorite}>
-            ☆
+            {favorite ? <StarIcon fontSize="large"/> : <StarBorderOutlinedIcon fontSize="large"/>}
         </FavoriteStyled>
     )
 }
