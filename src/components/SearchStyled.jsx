@@ -7,7 +7,11 @@ const SearchStyled = styled.div`
         font-size: 0.8em;
         margin: 0;
         border-radius: 5px;
-        border-color: rgb(247, 235, 236);
+        border: 2px solid rgba(172, 160, 187, 0.8);
+        &:focus {
+            outline: none;
+            border-color: rgb(247, 235, 236);
+        }
     }
     button {
         background: none;
