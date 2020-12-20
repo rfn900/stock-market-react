@@ -6,6 +6,7 @@ export default function SearchPage(props) {
     const length = matches ? Object.entries(matches).length : 0
     const showResults = length > 0 && length < 150
     return (
+        
         <div className="row">
             {length > 150 && <p>There are too many matches. Please try to narrow down your search.</p>}
             {length < 1 && <p>Sorry, we couldn't find any matches to your search.</p>}
