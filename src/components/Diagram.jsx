@@ -15,7 +15,6 @@ import {
 } from "recharts";
 
 export default function Diagram({ instrument }) {
-  console.log(instrument);
   // The data displayed in the graph is as follows. Got 5 data points from the API instrument array from InstrumentDetailPage.jsx.
   // Price is displayed on the Y-axis and Time is displayed on the X-axis.
   const LineChartData = [
