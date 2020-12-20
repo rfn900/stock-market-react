@@ -1,6 +1,6 @@
 import React, {useRef, useState, useEffect} from 'react'
 import {Redirect} from 'react-router-dom'
-
+import SearchIcon from '@material-ui/icons/Search';
 import {SearchStyled} from './SearchStyled'
 
 export default function Search() {
@@ -77,7 +77,7 @@ export default function Search() {
                             } />)}
             <SearchStyled>
                 <input ref={inputRef} type="text" placeholder="search instrument..." onKeyUp={handleOnKeyUp} />
-                <button onClick={handleOnClick}>🔍</button>
+                <button onClick={handleOnClick}><SearchIcon className="icon"/></button>
             </SearchStyled>
         </>
     )
