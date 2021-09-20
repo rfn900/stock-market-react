@@ -33,8 +33,8 @@ export default function Header() {
                     
                     {links.map( (item, index) => {
                         return (
-                        <li className="nav-item ">
-                            <Link key={index} className="nav-link" to={`/${item.toLowerCase()}`}>{item}</Link>
+                        <li key={index} className="nav-item ">
+                            <Link className="nav-link" to={`/${item.toLowerCase()}`}>{item}</Link>
                         </li>
                         )
 

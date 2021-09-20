@@ -6,9 +6,14 @@ import Diagram from "../components/Diagram";
 
 const RowStyled = styled.tr`
   &:hover {
-    background-color: rgba(172, 160, 187, 0.075) !important;
+    background-color: rgba(37, 59, 128, 0.1)!important; 
+    background-opacity: 0.2;
   }
 `;
+
+const DetailContainer = styled.div`
+  padding: 0 4em;
+`
 
 export default function InstrumentDetailPage(props) {
   const [instrument, setInstrument] = useState({});
@@ -45,7 +50,7 @@ export default function InstrumentDetailPage(props) {
   }, []);
 
   return (
-    <>
+    <DetailContainer>
       <Breadcrumbs />
       {!instrument && <p>Loading...</p>}
 
@@ -74,6 +79,6 @@ export default function InstrumentDetailPage(props) {
           )}
         </div>
       )}
-    </>
+    </DetailContainer>
   )
 }

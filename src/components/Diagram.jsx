@@ -72,7 +72,7 @@ export default function Diagram({ instrument }) {
             <Line
               type="monotone" // interpolation function
               dataKey="Price" // key of LineChartData
-              stroke="#AC9FBB" // Line color
+              stroke="#253b80" // Line color
             />
           </LineChart>
         </ResponsiveContainer>

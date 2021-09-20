@@ -1,12 +1,13 @@
 // We can use this file to override Bootstrap classes
 
-$primary:   rgb(172, 160, 187);
-$nav:   rgb(247, 235, 236);
+$primary: #253b80;
+$nav:  #fafafa;
 
-$success:   #AC9FBB;
-$light:     #AC9FBB;
+
+$success:   #253b80;
+$light:     #253b80;
 $body-bg:   #ffffff;        
-$body-color:#76717a;       
+$body-color:#313131;       
 
 
 $navbar-light-color:                $nav !default;
@@ -17,11 +18,8 @@ $navbar-light-toggler-border-color: rgba($nav, .1) !default;
 
 @import '~bootstrap/scss/bootstrap';
 
-html {
+html, body {
     position: relative;
-    min-height: 100%;
+    min-height: 100vh;
     scroll-behavior: smooth;
-    body {
-         margin-bottom: 5em;
-    }
 }

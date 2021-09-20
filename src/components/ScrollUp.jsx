@@ -9,7 +9,7 @@ const ScrollUpDiv = styled.div`
     position: fixed;
     bottom: 5em;
     left: 2em;
-    background-color:#AC9FBB;
+    background-color:#179bd7;
     border-radius: 15px;
     display: flex;
     justify-content:center;
@@ -21,7 +21,7 @@ const ScrollUpDiv = styled.div`
         &::before, &::after{
             content:'';
             position: absolute;
-            background: #76717a;
+            background: #fafafa;
             height: 6px;
             width: 50%;
             top: 45%;
