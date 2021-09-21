@@ -13,6 +13,10 @@ const RowStyled = styled.tr`
 
 const DetailContainer = styled.div`
   padding: 0 4em;
+  
+  @media (max-width: 1024px) {
+    padding: 0 1em;
+  }
 `
 
 export default function InstrumentDetailPage(props) {
